@@ -1,4 +1,4 @@
-export default function Loginpage() {
+export default function LoginPage() {
     return  (
        
             <form className="login">
