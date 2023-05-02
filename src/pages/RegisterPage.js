@@ -5,10 +5,16 @@ export default function RegisterPage() {
   const [password, setPassword] = useState("");
   async function register(ev) {
     ev.preventDefault();
-    await fetch("http://localhost:4000/register", {
+
+    const response = await fetch("http://localhost:3000/register", {
       body: JSON.stringify({ username, password }),
       headers: { "Content-Type": "application/json" },
     });
+    if (response.status === false) {
+      alert("registration successful");
+    } else {
+      alert("registration failed");
+    }
   }
   return (
     <form className="register" onSubmit={register}>
